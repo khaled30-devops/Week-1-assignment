@@ -5,11 +5,24 @@
   Output - [{ category1 - total_amount_spent_on_category1 }, { category2 - total_amount_spent_on_category2 }]
 
   Once you've implemented the logic, test your code by running
-  - `npm run test-expenditure-analysis`
+  - `npm run test-01-easy`
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  let groupedByCategory = transactions
+        .reduce((acc, current)=>{
+          const category = current.category;
+          if (!acc[category]){
+            acc[category] = 0
+          }
+
+          acc[category] += current.price; 
+        return acc
+      }, {});
+
+  return Object.keys(groupedByCategory).map(category => ({
+    [category]: groupedByCategory[category],
+  }))
 }
 
 module.exports = calculateTotalSpentByCategory;

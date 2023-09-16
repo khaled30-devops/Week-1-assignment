@@ -4,7 +4,7 @@
   - A word, phrase, or name formed by rearranging the letters of another, such as spar, formed from rasp.
 
   Once you've implemented the logic, test your code by running
-  - `npm run test-anagram`
+  - `npm run test-01-easy`
 */
 
 function isAnagram(str1, str2) {
